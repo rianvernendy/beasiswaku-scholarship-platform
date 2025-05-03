@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beasiswa LPDP - BeasiswaKu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=beasiswaku.com&sz=64">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1D4ED8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary">BeasiswaKu</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Cari Beasiswa</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Webinar</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Komunitas</a>
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">Masuk</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="pt-24 pb-12 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl font-bold mb-4">Beasiswa LPDP</h1>
+                <p class="text-xl text-blue-100">Program beasiswa prestisius untuk studi S2/S3 di dalam dan luar negeri</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Information -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Overview -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                        LPDP (Lembaga Pengelola Dana Pendidikan) adalah program beasiswa yang dikelola oleh Kementerian Keuangan Republik Indonesia untuk mendukung pendidikan lanjutan bagi putra-putri Indonesia yang berprestasi.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary">Jenjang</h3>
+                            <p>S2/S3</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary">Cakupan</h3>
+                            <p>Full Coverage</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requirements -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Persyaratan</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Warga Negara Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Usia maksimal 35 tahun untuk S2 dan 40 tahun untuk S3</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>IPK minimal 3.0 pada jenjang pendidikan sebelumnya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Memiliki LoA (Letter of Acceptance) dari universitas tujuan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Skor TOEFL ITP min. 550 atau IELTS min. 6.0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Timeline -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Timeline Pendaftaran</h2>
+                    <div class="relative">
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
+                        <div class="space-y-6">
+                            <div class="relative flex items-start">
+                                <div class="absolute left-0 mt-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-white"></i>
+                                </div>
+                                <div class="ml-12">
+                                    <h3 class="font-semibold">Pendaftaran Online</h3>
+                                    <p class="text-gray-600">1 Juni - 30 Juni 2024</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="absolute left-0 mt-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-tasks text-white"></i>
+                                </div>
+                                <div class="ml-12">
+                                    <h3 class="font-semibold">Seleksi Administrasi</h3>
+                                    <p class="text-gray-600">1 Juli - 15 Juli 2024</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="absolute left-0 mt-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-edit text-white"></i>
+                                </div>
+                                <div class="ml-12">
+                                    <h3 class="font-semibold">Tes Substansi</h3>
+                                    <p class="text-gray-600">20 Juli - 30 Juli 2024</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="absolute left-0 mt-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-comments text-white"></i>
+                                </div>
+                                <div class="ml-12">
+                                    <h3 class="font-semibold">Wawancara</h3>
+                                    <p class="text-gray-600">5 Agustus - 15 Agustus 2024</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start">
+                                <div class="absolute left-0 mt-1 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-trophy text-white"></i>
+                                </div>
+                                <div class="ml-12">
+                                    <h3 class="font-semibold">Pengumuman</h3>
+                                    <p class="text-gray-600">1 September 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Quick Actions -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-secondary transition-colors mb-4">
+                        Daftar Sekarang
+                    </button>
+                    <button class="w-full border-2 border-primary text-primary py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Simpan Beasiswa
+                    </button>
+                </div>
+
+                <!-- Coverage -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Cakupan Beasiswa</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Biaya Pendidikan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Biaya Hidup Bulanan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Tiket Pesawat PP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Asuransi Kesehatan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Tunjangan Keluarga</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Support -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Butuh Bantuan?</h3>
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center text-gray-600 hover:text-primary">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@beasiswaku.com
+                        </a>
+                        <a href="#" class="flex items-center text-gray-600 hover:text-primary">
+                            <i class="fas fa-phone mr-2"></i>
+                            +62 123 4567 890
+                        </a>
+                        <a href="#" class="flex items-center text-gray-600 hover:text-primary">
+                            <i class="fas fa-comments mr-2"></i>
+                            Live Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <span class="font-semibold">Apakah ada ikatan dinas setelah lulus?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        Ya, penerima beasiswa LPDP memiliki kewajiban untuk kembali ke Indonesia dan mengabdi selama 2x masa studi.
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <span class="font-semibold">Apakah boleh mendaftar ke multiple universitas?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600">
+                        Ya, Anda diperbolehkan mendaftar ke beberapa universitas sekaligus untuk meningkatkan peluang diterima.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">BeasiswaKu</h3>
+                    <p class="text-gray-400">Platform pencarian beasiswa terpercaya untuk mahasiswa dan siswa Indonesia.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cari Beasiswa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Webinar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kontak Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 123 4567 890</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@beasiswaku.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 BeasiswaKu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Webinar - BeasiswaKu</title>
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=beasiswaku.com&sz=64" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E40AF',
+            secondary: '#1D4ED8',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-50">
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold text-primary">BeasiswaKu</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+          <a href="cari-beasiswa.html" class="text-gray-700 hover:text-primary transition-colors">Cari Beasiswa</a>
+          <a href="webinar.html" class="text-gray-700 hover:text-primary transition-colors">Webinar</a>
+          <a href="index.html#komunitas" class="text-gray-700 hover:text-primary transition-colors">Komunitas</a>
+          <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">Masuk</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-bold mb-8">Daftar Webinar</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Webinar Card Example -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">24 Juni 2024</span>
+            <span class="text-gray-600">19:00 WIB</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">Tips Lolos Beasiswa LPDP</h3>
+          <p class="mt-2 text-gray-600">Belajar dari alumni penerima beasiswa LPDP</p>
+          <div class="mt-4 flex items-center space-x-3">
+            <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" alt="Dr. Sarah Johnson" class="w-10 h-10 rounded-full object-cover" />
+            <div>
+              <p class="font-semibold text-gray-900">Dr. Sarah Johnson</p>
+              <p class="text-sm text-gray-600">Alumni LPDP Harvard University</p>
+            </div>
+          </div>
+          <a href="webinar-tips-lolos-beasiswa.html" class="block mt-6">
+            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">Lihat Detail</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">26 Juni 2024</span>
+            <span class="text-gray-600">15:00 WIB</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">Menulis Essay Beasiswa</h3>
+          <p class="mt-2 text-gray-600">Workshop penulisan essay yang menarik</p>
+          <div class="mt-4 flex items-center space-x-3">
+            <img src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg" alt="Prof. Ahmad Rizki" class="w-10 h-10 rounded-full object-cover" />
+            <div>
+              <p class="font-semibold text-gray-900">Prof. Ahmad Rizki</p>
+              <p class="text-sm text-gray-600">Dosen UI & Reviewer Beasiswa</p>
+            </div>
+          </div>
+          <a href="webinar-menulis-essay.html" class="block mt-6">
+            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">Lihat Detail</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">28 Juni 2024</span>
+            <span class="text-gray-600">14:00 WIB</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">Persiapan IELTS</h3>
+          <p class="mt-2 text-gray-600">Strategi mencapai skor IELTS 7.0+</p>
+          <div class="mt-4 flex items-center space-x-3">
+            <img src="https://images.pexels.com/photos/3769706/pexels-photo-3769706.jpeg" alt="Michael Lee" class="w-10 h-10 rounded-full object-cover" />
+            <div>
+              <p class="font-semibold text-gray-900">Michael Lee</p>
+              <p class="text-sm text-gray-600">IELTS Trainer & Examiner</p>
+            </div>
+          </div>
+          <a href="webinar-persiapan-ielts.html" class="block mt-6">
+            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">Lihat Detail</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeasiswaKu - Platform Pencarian Beasiswa untuk Mahasiswa/Siswa</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=beasiswaku.com&sz=64">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .transition-transform {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1D4ED8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary">BeasiswaKu</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="cari-beasiswa.html" class="text-gray-700 hover:text-primary transition-colors">Cari Beasiswa</a>
+                    <a href="webinar.html" class="text-gray-700 hover:text-primary transition-colors">Webinar</a>
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">Masuk</button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 focus:outline-none" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Beranda</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Cari Beasiswa</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Webinar</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Komunitas</a>
+                    <button class="w-full mt-2 bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">Masuk</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const beasiswaButton = document.getElementById('beasiswaButton');
+        const beasiswaDropdown = document.getElementById('beasiswaDropdown');
+
+        beasiswaButton.addEventListener('click', () => {
+            beasiswaDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!beasiswaButton.contains(e.target) && !beasiswaDropdown.contains(e.target)) {
+                beasiswaDropdown.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Temukan Beasiswa Impianmu <span class="text-blue-200">Bersama Kami</span>
+                    </h1>
+                    <p class="text-lg text-blue-100">
+                        Platform terpercaya untuk mencari beasiswa yang sesuai dengan minat dan kualifikasimu. Raih masa depan cerahmu sekarang!
+                    </p>
+
+                    <!-- Search and Filter Menu -->
+                    <form action="cari-beasiswa.html" method="GET" class="bg-white p-6 rounded-lg shadow-md mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" name="keyword" placeholder="Cari beasiswa..." class="border border-gray-300 rounded-md p-2 w-full" />
+                            <select name="jenjang" class="border border-gray-300 rounded-md p-2 w-full">
+                                <option value="">Pilih Jenjang Pendidikan</option>
+                                <option value="SMA">SMA</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
+                            <select name="bidang" class="border border-gray-300 rounded-md p-2 w-full">
+                                <option value="">Pilih Bidang Studi</option>
+                                <option value="Teknik">Teknik</option>
+                                <option value="Ekonomi">Ekonomi</option>
+                                <option value="Kedokteran">Kedokteran</option>
+                                <option value="Hukum">Hukum</option>
+                                <option value="Sosial">Sosial</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                            <select name="negara" class="border border-gray-300 rounded-md p-2 w-full">
+                                <option value="">Pilih Negara Tujuan</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Amerika">Amerika</option>
+                                <option value="Inggris">Inggris</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Jepang">Jepang</option>
+                            </select>
+                            <select name="persyaratan" class="border border-gray-300 rounded-md p-2 w-full">
+                                <option value="">Persyaratan Khusus</option>
+                                <option value="TOEFL">TOEFL</option>
+                                <option value="IELTS">IELTS</option>
+                                <option value="Nilai Minimal">Nilai Minimal</option>
+                            </select>
+                            <input type="date" name="deadline" class="border border-gray-300 rounded-md p-2 w-full" />
+                        </div>
+                        <button type="submit" class="mt-4 bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">Cari</button>
+                    </form>
+
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
+                        <button class="bg-white text-primary px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                            Cari Beasiswa
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-primary transition-colors">
+                            Ikuti Webinar
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg" 
+                         alt="Students studying" 
+                         class="rounded-lg shadow-xl w-full hover-scale transition-transform">
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Popular Scholarships Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Beasiswa Populer</h2>
+                <p class="mt-4 text-gray-600">Beasiswa yang paling banyak diminati minggu ini</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Scholarship Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <img src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg" 
+                         alt="Scholarship" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Beasiswa LPDP</h3>
+                        <p class="mt-2 text-gray-600">Program beasiswa untuk studi S2/S3 di dalam dan luar negeri</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-primary font-semibold">Full Coverage</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">S2/S3</span>
+                        </div>
+                        <a href="beasiswa-lpdp.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Lihat Detail
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" 
+                         alt="Scholarship" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Beasiswa Unggulan</h3>
+                        <p class="mt-2 text-gray-600">Beasiswa untuk mahasiswa berprestasi di perguruan tinggi</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-primary font-semibold">Partial Coverage</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">S1</span>
+                        </div>
+                        <a href="beasiswa-unggulan.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Lihat Detail
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <img src="https://images.pexels.com/photos/3769706/pexels-photo-3769706.jpeg" 
+                         alt="Scholarship" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Beasiswa Djarum</h3>
+                        <p class="mt-2 text-gray-600">Program beasiswa plus pengembangan soft skill</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-primary font-semibold">Full Coverage</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">S1</span>
+                        </div>
+                        <a href="beasiswa-djarum.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Lihat Detail
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Webinars Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Webinar Mendatang</h2>
+                <p class="mt-4 text-gray-600">Tingkatkan peluangmu mendapatkan beasiswa</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Webinar Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">24 Juni 2024</span>
+                            <span class="text-gray-600">19:00 WIB</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Tips Lolos Beasiswa LPDP</h3>
+                        <p class="mt-2 text-gray-600">Belajar dari alumni penerima beasiswa LPDP</p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" 
+                                 alt="Speaker" 
+                                 class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-semibold text-gray-900">Dr. Sarah Johnson</p>
+                                <p class="text-sm text-gray-600">Alumni LPDP Harvard University</p>
+                            </div>
+                        </div>
+                        <a href="webinar-tips-lolos-beasiswa.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Daftar Sekarang
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Webinar Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">26 Juni 2024</span>
+                            <span class="text-gray-600">15:00 WIB</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Menulis Essay Beasiswa</h3>
+                        <p class="mt-2 text-gray-600">Workshop penulisan essay yang menarik</p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg" 
+                                 alt="Speaker" 
+                                 class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-semibold text-gray-900">Prof. Ahmad Rizki</p>
+                                <p class="text-sm text-gray-600">Dosen UI & Reviewer Beasiswa</p>
+                            </div>
+                        </div>
+                        <a href="webinar-menulis-essay.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Daftar Sekarang
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Webinar Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-scale transition-transform">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">28 Juni 2024</span>
+                            <span class="text-gray-600">14:00 WIB</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Persiapan IELTS</h3>
+                        <p class="mt-2 text-gray-600">Strategi mencapai skor IELTS 7.0+</p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/3769706/pexels-photo-3769706.jpeg" 
+                                 alt="Speaker" 
+                                 class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="font-semibold text-gray-900">Michael Lee</p>
+                                <p class="text-sm text-gray-600">IELTS Trainer & Examiner</p>
+                            </div>
+                        </div>
+                        <a href="webinar-persiapan-ielts.html" class="block">
+                            <button class="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-secondary transition-colors">
+                                Daftar Sekarang
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Testimoni Penerima Beasiswa</h2>
+                <p class="mt-4 text-gray-600">Kisah sukses dari para penerima beasiswa</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale transition-transform">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" 
+                             alt="Testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Putri Andini</h4>
+                            <p class="text-sm text-gray-600">Penerima Beasiswa LPDP 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "BeasiswaKu sangat membantu saya dalam menemukan dan mendaftar beasiswa LPDP. Informasinya lengkap dan webinarnya sangat bermanfaat!"
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale transition-transform">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg" 
+                             alt="Testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Budi Santoso</h4>
+                            <p class="text-sm text-gray-600">Penerima Beasiswa Unggulan 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Platform yang luar biasa! Saya bisa mendapatkan informasi beasiswa yang sesuai dengan profil saya. Terima kasih BeasiswaKu!"
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale transition-transform">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://images.pexels.com/photos/3769706/pexels-photo-3769706.jpeg" 
+                             alt="Testimonial" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Rina Wijaya</h4>
+                            <p class="text-sm text-gray-600">Penerima Beasiswa Djarum 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Webinar-webinar di BeasiswaKu sangat membantu dalam persiapan pendaftaran beasiswa. Mentornya sangat berpengalaman!"
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold">BeasiswaKu</h3>
+                    <p class="text-gray-400">Platform pencarian beasiswa terpercaya untuk mahasiswa dan siswa Indonesia.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cari Beasiswa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Webinar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kontak Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 123 4567 890</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@beasiswaku.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 BeasiswaKu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
